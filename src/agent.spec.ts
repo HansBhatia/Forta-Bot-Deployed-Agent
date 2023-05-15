@@ -44,8 +44,8 @@ describe("bot created by deployer bot", () => {
     it("returns a finding if there was a call to createAgent by bot deployer.", async () => {
       const mockCreateAgentFunctionCall = {
         args: {
-          agentId: "test-agent-101",
-          chainIds: "0xJest",
+          agentId: mockCreateAgentFunctionCall.args.agentId,
+          chainIds: mockCreateAgentFunctionCall.args.chainIds,
         },
       };
       mockTxEventDeployer.filterFunction = jest.fn().mockReturnValue([mockCreateAgentFunctionCall]);
