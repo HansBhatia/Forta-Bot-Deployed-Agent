@@ -21,4 +21,4 @@ This bot detects creations of forta bots by the forta deployer address.
 
 The agent behaviour can be verified with the following transactions:
 
-- 0x46c5a07d66aec71dc1b12dcf7a036c78c2299cc45c099d981d440f2c67501525 (One bot deployment)
+- 0x46c5a07d66aec71dc1b12dcf7a036c78c2299cc45c099d981d440f2c67501525 (One bot deployment) 
