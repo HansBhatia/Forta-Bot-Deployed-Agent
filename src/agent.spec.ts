@@ -44,8 +44,8 @@ describe("bot created by deployer bot", () => {
     it("returns a finding if there was a call to createAgent by bot deployer.", async () => {
       const mockCreateAgentFunctionCall = {
         args: {
-          agentId: mockCreateAgentFunctionCall.args.agentId,
-          chainIds: mockCreateAgentFunctionCall.args.chainIds,
+          agentId: "test-agent-101",
+          chainIds: "0xJest",
         },
       };
       mockTxEventDeployer.filterFunction = jest.fn().mockReturnValue([mockCreateAgentFunctionCall]);
@@ -55,14 +55,14 @@ describe("bot created by deployer bot", () => {
       expect(findings).toStrictEqual([
         Finding.fromObject({
           name: "New bot created",
-          description: `Bot created with id: ${"test-agent-101"}`,
+          description: `Bot created with id: ${mockCreateAgentFunctionCall.args.agentId}`,
           alertId: "Forta-Bot-Deployed",
           severity: FindingSeverity.Info,
           type: FindingType.Info,
           metadata: {
             deployer: DEPLOYER_ADDRESS.toLocaleLowerCase(),
-            agentId: "test-agent-101",
-            chainIds: "0xJest",
+            agentId: mockCreateAgentFunctionCall.args.agentId,
+            chainIds: mockCreateAgentFunctionCall.args.chainIds,
           },
         }),
       ]);
