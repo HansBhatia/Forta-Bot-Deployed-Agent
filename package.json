@@ -1,8 +1,8 @@
 {
-  "name": "forta-bot-deployed-agent",
+  "name": "forta-bot-deployment-tracker",
   "version": "0.0.1",
-  "description": "Forta Bot that monitors forta bot deployments from the deployer address.",
-  "repository": "",
+  "description": "Forta Bot that monitors Forta bot deployments by Nethermind",
+  "repository": "https://github.com/HansBhatia/Forta-Bot-Deployed-Agent",
   "chainIds": [
     137
   ],
@@ -29,7 +29,9 @@
     "test": "jest"
   },
   "dependencies": {
-    "forta-agent": "^0.1.29"
+    "ethers": "^6.4.0",
+    "forta-agent": "^0.1.29",
+    "forta-agent-tools": "^3.2.7"
   },
   "devDependencies": {
     "@types/jest": "^27.0.1",
